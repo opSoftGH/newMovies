@@ -2,7 +2,12 @@
 <resources>
     <string name="api_key_value" translatable="false">5fb6d918f1926240b59fc040268a3a3b</string>
     <!--
-    El numero que esta en el string es el valor del api key del asesor del curso, debo crear mi propia api key como
+    El numero que esta en el string anterior es el valor del api key del asesor del curso, debo crear mi propia api key como
     dice en la rubrica
     -->
+    <string name="results_json_param" translatable="false">results</string>
+    <string name="id_json_param" translatable="false"></string>
+    <string name="title_json_param" translatable="false"></string>
+    <string name="description_json_param" translatable="false"></string>
+    <string name="poster_path_json_param" translatable="false"></string>
 </resources>
