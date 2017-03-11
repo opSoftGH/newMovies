@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.cursoandroid.listeners.NetworkConnectionInterface;
 import com.cursoandroid.newmovies.R;
 
 import java.io.BufferedReader;
@@ -24,9 +25,12 @@ public class NetworkConnection extends AsyncTask<Void,Void,Boolean>{
     private final String tag = NetworkConnection.class.getSimpleName().toString();
     private Context context;
     private String resposeStr;
+    private NetworkConnectionInterface listener;
 
-    public NetworkConnection(Context context){
-        this.context = context;
+    public NetworkConnection(Context context, NetworkConnectionInterface networkConnectionInterface
+    ){
+        this.context= context;
+        this.listener= networkConnectionInterface;
     }
 
     @Override
@@ -84,6 +88,19 @@ public class NetworkConnection extends AsyncTask<Void,Void,Boolean>{
             e.printStackTrace();
             Log.e(tag,e.toString());
             return false;
+        }
+    }
+
+    @Override
+    protected void onPostExecute(Boolean result) {
+        if (result==true){
+            if (listener!=null){
+                listener.OnSuccessFullyRespose(resposeStr);
+            }
+        }else{
+            if (listener!=null){
+                listener.OnFaliedRespose(resposeStr);
+            }
         }
     }
 }

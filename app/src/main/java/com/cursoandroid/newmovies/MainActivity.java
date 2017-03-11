@@ -5,17 +5,36 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.cursoandroid.listeners.NetworkConnectionInterface;
 import com.cursoandroid.network.NetworkConnection;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements NetworkConnectionInterface{
 
     private String tag = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        /*
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        NetworkConnection connection = new NetworkConnection(this,this);
+        connection.execute();
+    }
+
+    @Override
+    public void OnSuccessFullyRespose(String respose) {
+
+    }
+
+    @Override
+    public void OnFaliedRespose(String response) {
+
+    }
+}
+
+/*
         Uri uriExample;
+
         Esta forma de escribir la URL es igual a la que aparece adelante pero es obsoleta
         Uri.Builder builder = Uri.parse("http://www.google.com").buildUpon();
         builder.appendPath("users");
@@ -24,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         builder.appendQueryParameter("name","Francisco");
         uriExample=builder.build();
         Log.d(tag,"Url: "+uriExample.toString());
+
         uriExample = Uri.parse("http://www.google.com").buildUpon()
                 .appendPath("users")
                 .appendPath("params")
@@ -31,9 +51,3 @@ public class MainActivity extends AppCompatActivity {
                 .appendQueryParameter("name","Francisco")
                 .build();
         */
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        NetworkConnection connection = new NetworkConnection(this);
-        connection.execute();
-    }
-}
