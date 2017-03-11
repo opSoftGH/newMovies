@@ -5,8 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.cursoandroid.json_utilities.JsonParser;
 import com.cursoandroid.listeners.NetworkConnectionInterface;
+import com.cursoandroid.models.Movie;
 import com.cursoandroid.network.NetworkConnection;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity  implements NetworkConnectionInterface{
 
@@ -23,6 +27,7 @@ public class MainActivity extends AppCompatActivity  implements NetworkConnectio
 
     @Override
     public void OnSuccessFullyRespose(String respose) {
+        ArrayList<Movie> peliculas = JsonParser.getMovies(this,respose);
 
     }
 
