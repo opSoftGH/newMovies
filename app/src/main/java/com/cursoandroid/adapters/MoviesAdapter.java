@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import com.cursoandroid.models.Movie;
 import com.cursoandroid.newmovies.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -36,7 +37,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
+        Picasso.with(context).load(movies.get(position).getPoster_path()).into(holder.image);
     }
 
     @Override

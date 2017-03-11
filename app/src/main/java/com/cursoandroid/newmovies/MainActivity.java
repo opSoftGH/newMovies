@@ -7,6 +7,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.cursoandroid.adapters.MoviesAdapter;
 import com.cursoandroid.json_utilities.JsonParser;
 import com.cursoandroid.listeners.NetworkConnectionInterface;
 import com.cursoandroid.models.Movie;
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity  implements NetworkConnectio
     @Override
     public void OnSuccessFullyRespose(String respose) {
         ArrayList<Movie> peliculas = JsonParser.getMovies(this,respose);
+        MoviesAdapter adapter = new MoviesAdapter(this,peliculas);
+        lista.setAdapter(adapter);
     }
 
     @Override
