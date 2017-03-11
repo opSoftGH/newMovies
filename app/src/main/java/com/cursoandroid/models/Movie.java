@@ -6,13 +6,13 @@ package com.cursoandroid.models;
 
 public class Movie {
     private int id;
-    private String tittle;
+    private String title;
     private String description;
     private String poster_path;
 
-    public Movie(int id, String tittle, String description, String poster_path) {
+    public Movie(int id, String title, String description, String poster_path) {
         this.id = id;
-        this.tittle = tittle;
+        this.title = title;
         this.description = description;
         this.poster_path = poster_path;
     }
@@ -25,12 +25,12 @@ public class Movie {
         this.id = id;
     }
 
-    public String getTittle() {
-        return tittle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTittle(String tittle) {
-        this.tittle = tittle;
+    public void setTitle(String tittle) {
+        this.title = title;
     }
 
     public String getDescription() {
