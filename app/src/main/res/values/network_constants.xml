@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="api_key_value" translatable="false">5fb6d918f1926240b59fc040268a3a3b</string>
+    <!--
+    El numero que esta en el string es el valor del api key del asesor del curso, debo crear mi propia api key como
+    dice en la rubrica
+    -->
+</resources>
