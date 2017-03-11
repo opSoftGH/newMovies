@@ -6,8 +6,8 @@
     dice en la rubrica
     -->
     <string name="results_json_param" translatable="false">results</string>
-    <string name="id_json_param" translatable="false"></string>
-    <string name="title_json_param" translatable="false"></string>
-    <string name="description_json_param" translatable="false"></string>
-    <string name="poster_path_json_param" translatable="false"></string>
+    <string name="id_json_param" translatable="false">id</string>
+    <string name="title_json_param" translatable="false">original_title</string>
+    <string name="description_json_param" translatable="false">overview</string>
+    <string name="poster_path_json_param" translatable="false">poster_path</string>
 </resources>
