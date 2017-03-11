@@ -28,6 +28,7 @@ public class JsonParser {
                 String description = pelicula.getString(context.getString(R.string.description_json_param));
                 String poster_path = pelicula.getString(context.getString(R.string.poster_path_json_param));
                 poster_path= context.getString(R.string.base_url_image_api+R.string.image_size_default)+poster_path;
+                //En la sentencia anterior estaba a discucion lo de la doble diagonal, yo se la quite, si existe error probar agregandola
 
                 Movie movie = new Movie(id,title,description,poster_path);
                 peliculas.add(movie);
